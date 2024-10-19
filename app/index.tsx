@@ -1,15 +1,11 @@
-import { Text, View } from "react-native";
 
-export default function Index() {
+import React from "react";
+import HomePage from "@/screens/home-page.screen";
+
+function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <HomePage />
   );
 }
+
+export default Index;
