@@ -35,6 +35,8 @@ function HomePage() {
         setSocialMediaSelection(newSocialMediaSelection)
     }
 
+    // TODO icone d'app, datepicker et style header
+
     return (
         <View style={styles.parentView}>
             <SearchBar
@@ -42,7 +44,7 @@ function HomePage() {
                 onChangeText={updateSearch}
                 value={stockOption}
                 platform="android"
-                containerStyle={{ backgroundColor: '#666665' }}
+                containerStyle={{ backgroundColor: '#b0afab' }}
                 placeholderTextColor={"#b0afab"}
             />
 

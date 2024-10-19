@@ -1,7 +1,7 @@
 import { SocialMediaEnum, SocialMediaMentions } from "@/app/models/social-media.models";
 import { getBuyHoldSellSuggestion } from "@/utils/stock-option-recommendation.utils";
 import { useEffect, useState } from "react";
-import { BuyHoldSell, StockOptionInfo } from "@/app/models/stock-option.models";
+import { StockOptionInfo } from "@/app/models/stock-option.models";
 
 export function useStockOptionInfo(
     stockOption: string,
@@ -13,28 +13,22 @@ export function useStockOptionInfo(
     const [price, setPrice] = useState<number>(getPrice());
     const [purchasePrice, setPurchasePrice] = useState<number>(getPrice());
     const [priceInLastMonth, setPriceInLastMonth] = useState<number>(getPrice());
-    const [recommendation, setRecommendation] = useState<BuyHoldSell>(
-        getBuyHoldSellSuggestion(
-            mentions.filter((x) =>
-                selectedSocialMedia.includes(x.name)
-            ),
-            price,
-            purchasePrice,
-            priceInLastMonth
-        )
+
+    const recommendation = getBuyHoldSellSuggestion(
+        mentions.filter((x) =>
+            selectedSocialMedia.includes(x.name)
+        ),
+        price,
+        purchasePrice,
+        priceInLastMonth
     );
+
 
     useEffect(() => {
         setMentions(getMentions());
         setPrice(getPrice());
         setPurchasePrice(getPrice());
         setPriceInLastMonth(getPrice());
-        setRecommendation(getBuyHoldSellSuggestion(
-            mentions,
-            price,
-            purchasePrice,
-            priceInLastMonth
-        ))
     }, [stockOption]);
 
 
