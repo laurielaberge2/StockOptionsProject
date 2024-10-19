@@ -19,6 +19,11 @@ export interface SocialMediaItem {
     selected: boolean
 }
 
+export interface SocialMediaMentions {
+    name: SocialMediaEnum,
+    nbMentions: number
+}
+
 function HomePage() {
     const styles = useHomePageStyles();
 
@@ -60,14 +65,18 @@ function HomePage() {
 
             <SocialMediaList socialMediaList={socialMediaSelection} onToggleSelected={onToggleSelected} />
 
-            <StockOptionResult stockOption={stockOption} />
+            <StockOptionResult
+                stockOption={stockOption}
+                selectedSocialMedia={socialMediaSelection.filter(x => x.selected).map(x => x.name)}
+            />
         </ View >
     );
 }
 
 const useHomePageStyles = makeStyles(() => ({
     parentView: {
-        backgroundColor: '#b0afab', height: '100%'
+        backgroundColor: '#b0afab',
+        height: '100%'
     },
 }));
 

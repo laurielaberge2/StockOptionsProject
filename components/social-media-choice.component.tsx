@@ -24,7 +24,6 @@ function SocialMediaChoice({ socialMedia, onToggleSelected }: Props) {
                 uncheckedColor="#F00"
                 containerStyle={styles.checkBoxContainer}
                 textStyle={styles.checkBoxText}
-
             />
         </View>
     );

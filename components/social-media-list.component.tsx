@@ -24,9 +24,10 @@ function SocialMediaList({ socialMediaList, onToggleSelected }: Props) {
 const useSocialMediaListStyles = makeStyles(() => ({
     parentView: {
         display: 'flex',
-        'flexDirection': 'row',
-        'flexWrap': 'wrap',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         backgroundColor: '#666665',
+        justifyContent: 'space-evenly'
     }
 }));
 

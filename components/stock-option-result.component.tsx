@@ -3,16 +3,21 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import EmptyState from "./empty-state.component";
-import StockOptionInfo from "./stock-option-info.component";
+import StockOptionInfoDetails from "./stock-option-info.component-details";
+import { useStockOptionInfo } from "@/hooks/use-stock-option-info";
+import { SocialMediaEnum } from "@/screens/home-page.screen";
 
 interface Props {
     stockOption: string
+    selectedSocialMedia: SocialMediaEnum[]
 }
 
-function StockOptionResult({ stockOption }: Props) {
+function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
     const styles = useStockOptionResultStyles();
 
     const [infoIsShown, setInfoIsShown] = useState<boolean>(false);
+
+    const { price, mentions } = useStockOptionInfo(stockOption, selectedSocialMedia)
 
     if (!stockOption) {
         return <EmptyState />
@@ -35,7 +40,10 @@ function StockOptionResult({ stockOption }: Props) {
                 onPress={() => setInfoIsShown(!infoIsShown)}
             />
 
-            {infoIsShown && <StockOptionInfo stockOption={stockOption} />}
+            {infoIsShown && <StockOptionInfoDetails
+                price={price}
+                mentions={mentions}
+            />}
         </View>
 
     );
@@ -65,6 +73,7 @@ const useStockOptionResultStyles = makeStyles(() => ({
     },
     buttonContainer: {
         width: 160,
+        marginBottom: 20
     }
 }));
 
