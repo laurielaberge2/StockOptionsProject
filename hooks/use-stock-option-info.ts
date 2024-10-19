@@ -1,7 +1,7 @@
 import { SocialMediaEnum, SocialMediaMentions } from "@/app/models/social-media.models";
+import { getBuyHoldSellSuggestion } from "@/utils/stock-option-recommendation.utils";
 import { useEffect, useState } from "react";
 import { BuyHoldSell, StockOptionInfo } from "@/app/models/stock-option.models";
-
 
 export function useStockOptionInfo(
     stockOption: string,
@@ -11,24 +11,48 @@ export function useStockOptionInfo(
         getMentions()
     );
     const [price, setPrice] = useState<number>(getPrice());
+    const [purchasePrice, setPurchasePrice] = useState<number>(getPrice());
+    const [priceInLastMonth, setPriceInLastMonth] = useState<number>(getPrice());
+    const [recommendation, setRecommendation] = useState<BuyHoldSell>(
+        getBuyHoldSellSuggestion(
+            mentions.filter((x) =>
+                selectedSocialMedia.includes(x.name)
+            ),
+            price,
+            purchasePrice,
+            priceInLastMonth
+        )
+    );
 
     useEffect(() => {
         setMentions(getMentions());
         setPrice(getPrice());
+        setPurchasePrice(getPrice());
+        setPriceInLastMonth(getPrice());
+        setRecommendation(getBuyHoldSellSuggestion(
+            mentions,
+            price,
+            purchasePrice,
+            priceInLastMonth
+        ))
     }, [stockOption]);
 
 
     return {
-        price, mentions: mentions.filter((x) =>
+        price,
+        mentions: mentions.filter((x) =>
             selectedSocialMedia.includes(x.name)
-        )
+        ),
+        recommendation,
+        purchasePrice,
+        priceInLastMonth,
     };
-}
+};
 
 
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
-}
+};
 
 function getMentions(): SocialMediaMentions[] {
     return [
@@ -37,8 +61,8 @@ function getMentions(): SocialMediaMentions[] {
         { name: SocialMediaEnum.TWITTER, nbMentions: getRandomInt(10) },
         { name: SocialMediaEnum.TIKTOK, nbMentions: getRandomInt(10) }
     ];
-}
+};
 
 function getPrice(): number {
     return getRandomInt(500);
-}
+};
