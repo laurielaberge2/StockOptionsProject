@@ -7,18 +7,16 @@ function EmptyState() {
     const styles = useStockOptionResultStyles();
 
     return (
-        <Text style={styles.parentView}>
-            <Text>Search a stock option for more information</Text>
-        </Text >
+        <Text style={styles.text}>Search a stock option for more information</Text>
     );
 }
 
 
 const useStockOptionResultStyles = makeStyles(() => ({
-    parentView: {
+    text: {
         margin: 10,
         fontSize: 20,
-        color: '#1a191c',
+        color: '#000000',
         textAlign: 'center'
     },
 }));

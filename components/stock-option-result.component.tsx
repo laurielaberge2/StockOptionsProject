@@ -10,14 +10,13 @@ import { SocialMediaEnum } from "@/app/models/social-media.models";
 interface Props {
     stockOption: string
     selectedSocialMedia: SocialMediaEnum[]
-}
+};
 
 function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
     const styles = useStockOptionResultStyles();
 
     const [infoIsShown, setInfoIsShown] = useState<boolean>(false);
-
-    const { price, mentions } = useStockOptionInfo(stockOption, selectedSocialMedia)
+    const info = useStockOptionInfo(stockOption, selectedSocialMedia)
 
     if (!stockOption) {
         return <EmptyState />
@@ -41,23 +40,22 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
             />
 
             {infoIsShown && <StockOptionInfoDetails
-                price={price}
-                mentions={mentions}
+                info={info}
             />}
         </View>
 
     );
-}
+};
 
 
 const useStockOptionResultStyles = makeStyles(() => ({
     parentView: {
-        margin: 10,
-        alignItems: 'center'
+        marginVertical: 10,
+        alignItems: 'center',
     },
     textSection: {
         fontSize: 20,
-        color: '#1a191c',
+        color: '#000000',
     },
     stockOption: {
         fontWeight: 'bold'
@@ -73,7 +71,6 @@ const useStockOptionResultStyles = makeStyles(() => ({
     },
     buttonContainer: {
         width: 160,
-        marginBottom: 20
     }
 }));
 

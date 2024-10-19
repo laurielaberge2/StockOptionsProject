@@ -3,44 +3,45 @@ import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
 import SocialMediaMentionDetail from "./social-media-mention-detail.component";
+import BuyHoldSellRecommendation from "./stock-option-buy-hold-sell-recommendation.component";
+import { StockOptionInfo } from "@/app/models/stock-option.models";
 import { SocialMediaMentions } from "@/app/models/social-media.models";
+import StockOptionPriceInfo from "./stock-option-price-info.component";
 
 interface Props {
-    price: number,
-    mentions: SocialMediaMentions[],
-}
+    info: StockOptionInfo,
+};
 
-function StockOptionInfoDetails({ price, mentions }: Props) {
+function StockOptionInfoDetails({ info }: Props) {
     const styles = useStockOptionInfoStyles();
 
+    const {
+        recommendation,
+        mentions
+    } = info;
 
     return (
         <View style={styles.parentView}>
-            <Text style={styles.price}>
-                {price}$
-            </Text >
+            <StockOptionPriceInfo info={info} />
 
-            <View>
-                {mentions.map((socialMediaMention: SocialMediaMentions) => {
-                    return <SocialMediaMentionDetail
-                        mention={socialMediaMention}
-                        key={socialMediaMention.name}
-                    />
-                })}
-            </View >
+            <BuyHoldSellRecommendation recommendation={recommendation} />
+
+            {mentions.map((socialMediaMention: SocialMediaMentions) => {
+                return <SocialMediaMentionDetail
+                    mention={socialMediaMention}
+                    key={socialMediaMention.name}
+                />
+            })}
         </View>
 
     );
-}
+};
 
 
 const useStockOptionInfoStyles = makeStyles(() => ({
     parentView: {
-        margin: 10,
-        alignItems: 'center'
-    },
-    price: {
-        fontSize: 20,
+        marginTop: 10,
+        width: '100%'
     },
 }));
 
