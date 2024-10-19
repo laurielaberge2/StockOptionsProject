@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Text, View } from "react-native";
-import { makeStyles } from '@rneui/themed';
+import { Button, makeStyles } from '@rneui/themed';
 import EmptyState from "./empty-state.component";
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
 
 function StockOptionResult({ stockOption }: Props) {
     const styles = useStockOptionResultStyles();
+
+    const [infoIsShown, setInfoIsShown] = useState<boolean>(false);
 
     if (!stockOption) {
         return <EmptyState />
@@ -23,6 +25,14 @@ function StockOptionResult({ stockOption }: Props) {
                     {stockOption || "..."}
                 </Text>
             </Text >
+
+            <Button
+                title={infoIsShown ? "Hide information" : "Show information"}
+                buttonStyle={styles.button}
+                titleStyle={styles.buttonTitle}
+                containerStyle={styles.buttonContainer}
+                onPress={() => setInfoIsShown(!infoIsShown)}
+            />
         </View>
 
     );
@@ -41,6 +51,18 @@ const useStockOptionResultStyles = makeStyles(() => ({
     stockOption: {
         fontWeight: 'bold'
     },
+    button: {
+        backgroundColor: 'rgba(90, 154, 230, 1)',
+        borderRadius: 30,
+        marginTop: 10
+    },
+    buttonTitle: {
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+    buttonContainer: {
+        width: 160,
+    }
 }));
 
 export default StockOptionResult;
