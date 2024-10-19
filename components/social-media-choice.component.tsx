@@ -2,7 +2,7 @@
 import React from "react";
 import { View } from "react-native";
 import { CheckBox, makeStyles } from '@rneui/themed';
-import { SocialMediaItem } from "@/screens/home-page.screen";
+import { SocialMediaItem } from "@/app/models/social-media.models";
 
 interface Props {
     socialMedia: SocialMediaItem,

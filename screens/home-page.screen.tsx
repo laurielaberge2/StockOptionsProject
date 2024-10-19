@@ -5,24 +5,7 @@ import { useState } from "react";
 import SocialMediaList from "@/components/social-media-list.component";
 import StockOptionResult from "@/components/stock-option-result.component";
 import { makeStyles } from '@rneui/themed';
-
-export enum SocialMediaEnum {
-    FACEBOOK = 'Facebook',
-    INSTAGRAM = 'Instagram',
-    TWITTER = 'Twitter / X',
-    TIKTOK = 'TikTok',
-}
-
-export interface SocialMediaItem {
-    id: number,
-    name: SocialMediaEnum,
-    selected: boolean
-}
-
-export interface SocialMediaMentions {
-    name: SocialMediaEnum,
-    nbMentions: number
-}
+import { SocialMediaItem, SocialMediaEnum } from "@/app/models/social-media.models";
 
 function HomePage() {
     const styles = useHomePageStyles();
@@ -71,12 +54,12 @@ function HomePage() {
             />
         </ View >
     );
-}
+};
 
 const useHomePageStyles = makeStyles(() => ({
     parentView: {
         backgroundColor: '#b0afab',
-        height: '100%'
+        height: '100%',
     },
 }));
 

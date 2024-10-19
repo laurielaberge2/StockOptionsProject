@@ -2,8 +2,8 @@
 import React from "react";
 import { View } from "react-native";
 import SocialMediaChoice from "./social-media-choice.component";
-import { SocialMediaItem } from "@/screens/home-page.screen";
 import { makeStyles } from '@rneui/themed';
+import { SocialMediaItem } from "@/app/models/social-media.models";
 
 interface Props {
     socialMediaList: SocialMediaItem[],

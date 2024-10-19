@@ -3,7 +3,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
 import SocialMediaMentionDetail from "./social-media-mention-detail.component";
-import { SocialMediaMentions } from "@/screens/home-page.screen";
+import { SocialMediaMentions } from "@/app/models/social-media.models";
 
 interface Props {
     price: number,

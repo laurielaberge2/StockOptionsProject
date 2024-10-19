@@ -1,10 +1,7 @@
-import { SocialMediaEnum, SocialMediaMentions } from "@/screens/home-page.screen";
+import { SocialMediaEnum, SocialMediaMentions } from "@/app/models/social-media.models";
 import { useEffect, useState } from "react";
+import { BuyHoldSell, StockOptionInfo } from "@/app/models/stock-option.models";
 
-export interface StockOptionInfo {
-    price: number,
-    mentions: SocialMediaMentions[]
-}
 
 export function useStockOptionInfo(
     stockOption: string,
