@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import EmptyState from "./empty-state.component";
+import StockOptionInfo from "./stock-option-info.component";
 
 interface Props {
     stockOption: string
@@ -33,6 +34,8 @@ function StockOptionResult({ stockOption }: Props) {
                 containerStyle={styles.buttonContainer}
                 onPress={() => setInfoIsShown(!infoIsShown)}
             />
+
+            {infoIsShown && <StockOptionInfo stockOption={stockOption} />}
         </View>
 
     );
