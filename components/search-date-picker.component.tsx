@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SafeAreaView, Text } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import { DateTimePickerAndroid, DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import { Colors } from "@/constants/Colors";
+import { Colors } from "../constants/colors.constants";
 
 export interface Props {
     selectedDate: Date,

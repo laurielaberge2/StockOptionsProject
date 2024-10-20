@@ -2,11 +2,12 @@ import React from "react";
 import { View } from "react-native";
 import { SearchBar } from '@rneui/themed';
 import { useState } from "react";
-import StockOptionResult from "@/components/stock-option/stock-option-result.component";
+import StockOptionResult from "../components/stock-option/stock-option-result.component";
 import { makeStyles } from '@rneui/themed';
-import { SocialMediaItem, SocialMediaEnum } from "@/app/models/social-media.models";
-import { Colors } from "@/constants/Colors";
-import SocialMediaList from "@/components/social-media/social-media-list.component";
+import { SocialMediaItem, SocialMediaEnum } from "../app/models/social-media.models";
+import { Colors } from "../constants/colors.constants";
+import SocialMediaList from "../components/social-media/social-media-list.component";
+import { TestIds } from "../constants/test-ids.constants";
 
 function HomePage() {
     const styles = useHomePageStyles();
@@ -49,6 +50,7 @@ function HomePage() {
                     backgroundColor: Colors.lightGrey
                 }}
                 placeholderTextColor={Colors.darkText}
+                testID={TestIds.SEARCHBAR}
             />
 
             <SocialMediaList socialMediaList={socialMediaSelection} onToggleSelected={onToggleSelected} />

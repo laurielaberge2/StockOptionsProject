@@ -2,7 +2,7 @@
 import React from "react";
 import { Text } from "react-native";
 import { makeStyles } from '@rneui/themed';
-import { Colors } from "@/constants/Colors";
+import { Colors } from "../../constants/colors.constants";
 
 function StockOptionResultEmptyState() {
     const styles = useStockOptionResultEmptyStateStyles();

@@ -1,6 +1,6 @@
 
 import React from "react";
-import HomePage from "@/screens/home-page.screen";
+import HomePage from "../screens/home-page.screen";
 
 function Index() {
   return (

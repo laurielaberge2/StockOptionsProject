@@ -2,7 +2,7 @@
 import React from "react";
 import { Text } from "react-native";
 import { makeStyles } from '@rneui/themed';
-import { SocialMediaMentions } from "@/app/models/social-media.models";
+import { SocialMediaMentions } from "../../app/models/social-media.models";
 
 interface Props {
     mention: SocialMediaMentions

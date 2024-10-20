@@ -2,8 +2,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
-import { BuyHoldSell } from "@/app/models/stock-option.models";
-import { Colors } from "@/constants/Colors";
+import { BuyHoldSell } from "../../app/models/stock-option.models";
+import { Colors } from "../../constants/colors.constants";
 
 interface Props {
     recommendation: BuyHoldSell

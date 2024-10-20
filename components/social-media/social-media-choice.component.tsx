@@ -2,8 +2,8 @@
 import React from "react";
 import { View } from "react-native";
 import { CheckBox, makeStyles } from '@rneui/themed';
-import { SocialMediaItem } from "@/app/models/social-media.models";
-import { Colors } from "@/constants/Colors";
+import { SocialMediaItem } from "../../app/models/social-media.models";
+import { Colors } from "../../constants/colors.constants";
 
 interface Props {
     socialMedia: SocialMediaItem,

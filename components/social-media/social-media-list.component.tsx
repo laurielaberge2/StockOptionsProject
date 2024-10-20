@@ -3,8 +3,8 @@ import React from "react";
 import { View } from "react-native";
 import SocialMediaChoice from "./social-media-choice.component";
 import { makeStyles } from '@rneui/themed';
-import { SocialMediaItem } from "@/app/models/social-media.models";
-import { Colors } from "@/constants/Colors";
+import { SocialMediaItem } from "../../app/models/social-media.models";
+import { Colors } from "../../constants/colors.constants";
 
 interface Props {
     socialMediaList: SocialMediaItem[],

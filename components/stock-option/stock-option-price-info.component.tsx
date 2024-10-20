@@ -2,7 +2,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
-import { StockOptionInfo } from "@/app/models/stock-option.models";
+import { StockOptionInfo } from "../../app/models/stock-option.models";
 
 interface Props {
     info: StockOptionInfo,

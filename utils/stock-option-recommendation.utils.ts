@@ -1,5 +1,5 @@
-import { SocialMediaMentions } from "@/app/models/social-media.models";
-import { BuyHoldSell } from "@/app/models/stock-option.models";
+import { SocialMediaMentions } from "../app/models/social-media.models";
+import { BuyHoldSell } from "../app/models/stock-option.models";
 
 export function getBuyHoldSellSuggestion(
     mentions: SocialMediaMentions[],

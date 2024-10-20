@@ -1,7 +1,7 @@
-import { SocialMediaEnum, SocialMediaMentions } from "@/app/models/social-media.models";
-import { getBuyHoldSellSuggestion } from "@/utils/stock-option-recommendation.utils";
+import { SocialMediaEnum, SocialMediaMentions } from "../app/models/social-media.models";
+import { getBuyHoldSellSuggestion } from "../utils/stock-option-recommendation.utils";
 import { useEffect, useState } from "react";
-import { StockOptionInfo } from "@/app/models/stock-option.models";
+import { StockOptionInfo } from "../app/models/stock-option.models";
 
 export function useStockOptionInfo(
     stockOption: string,

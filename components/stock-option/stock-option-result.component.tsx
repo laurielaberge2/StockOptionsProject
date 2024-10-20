@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import StockOptionResultEmptyState from "./stock-option-result-empty-state.component";
-import { useStockOptionInfo } from "@/hooks/use-stock-option-info";
-import { SocialMediaEnum } from "@/app/models/social-media.models";
-import { Colors } from "@/constants/Colors";
+import { useStockOptionInfo } from "../../hooks/use-stock-option-info";
+import { SocialMediaEnum } from "../../app/models/social-media.models";
+import { Colors } from "../../constants/colors.constants";
 import StockOptionInfoDetails from "./stock-option-info.component-details";
-import SearchDatePicker from "@/components/search-date-picker.component";
+import SearchDatePicker from "../../components/search-date-picker.component";
 
 interface Props {
     stockOption: string
