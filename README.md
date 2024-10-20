@@ -17,6 +17,7 @@ In folder /android/app:
 keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
 ```
 
+In root:
 ```bash
 npx expo run:android
 ```
