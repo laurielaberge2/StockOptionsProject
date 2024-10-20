@@ -6,7 +6,7 @@ import StockOptionResultEmptyState from "./stock-option-result-empty-state.compo
 import { useStockOptionInfo } from "../../hooks/use-stock-option-info";
 import { SocialMediaEnum } from "../../app/models/social-media.models";
 import { Colors } from "../../constants/colors.constants";
-import StockOptionInfoDetails from "./stock-option-info.component-details";
+import StockOptionInfoDetails from "./stock-option-info.component-details.component";
 import SearchDatePicker from "../../components/search-date-picker.component";
 
 interface Props {
