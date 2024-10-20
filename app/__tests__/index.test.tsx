@@ -4,10 +4,10 @@ import { render } from '@testing-library/react-native';
 import Index from '../index';
 import { TestIds } from '../../constants/test-ids.constants';
 
-describe('<HomeScreen />', () => {
-    test('renders HomePage component', () => {
-        const { getByTestId } = render(<Index />);
+describe('HomeScreen (Index)', () => {
+    it('renders HomePage component', () => {
+        const { queryByTestId } = render(<Index />);
 
-        getByTestId(TestIds.SEARCHBAR);
+        expect(queryByTestId(TestIds.SEARCHBAR)).toBeTruthy();
     });
 });
