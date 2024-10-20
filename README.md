@@ -1,4 +1,4 @@
-# Stock options lookup
+# Stock options lookup 🐈‍🐈‍
 
 Developed by Laurie Laberge in October 2024
 
