@@ -36,7 +36,7 @@ function HomePage() {
         setSocialMediaSelection(newSocialMediaSelection)
     }
 
-    // TODO icone d'app, datepicker, tests et readme
+    // TODO datepicker, tests et readme
 
     return (
         <View style={styles.parentView}>
