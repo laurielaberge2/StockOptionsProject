@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { SearchBar } from '@rneui/themed';
 import { useState } from "react";
 import SocialMediaList from "@/components/social-media-list.component";
-import StockOptionResult from "@/components/stock-option-result.component";
+import StockOptionResult from "@/components/stock-option/stock-option-result.component";
 import { makeStyles } from '@rneui/themed';
 import { SocialMediaItem, SocialMediaEnum } from "@/app/models/social-media.models";
 import { Colors } from "@/constants/Colors";
@@ -36,7 +36,7 @@ function HomePage() {
         setSocialMediaSelection(newSocialMediaSelection)
     }
 
-    // TODO datepicker, tests et readme
+    // TODO datepicker, tests et tester de cloner et build pour voir si ca fonctionne
 
     return (
         <View style={styles.parentView}>

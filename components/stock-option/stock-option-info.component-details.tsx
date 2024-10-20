@@ -2,7 +2,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
-import SocialMediaMentionDetail from "./social-media-mention-detail.component";
+import SocialMediaMentionDetail from "../social-media-mention-detail.component";
 import BuyHoldSellRecommendation from "./stock-option-buy-hold-sell-recommendation.component";
 import { StockOptionInfo } from "@/app/models/stock-option.models";
 import { SocialMediaMentions } from "@/app/models/social-media.models";

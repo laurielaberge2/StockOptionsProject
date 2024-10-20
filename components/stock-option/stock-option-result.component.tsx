@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
-import EmptyState from "./empty-state.component";
-import StockOptionInfoDetails from "./stock-option-info.component-details";
+import StockOptionResultEmptyState from "./stock-option-result-empty-state.component";
+import StockOptionInfoDetails from "../stock-option-info.component-details";
 import { useStockOptionInfo } from "@/hooks/use-stock-option-info";
 import { SocialMediaEnum } from "@/app/models/social-media.models";
 import { Colors } from "@/constants/Colors";
@@ -20,7 +20,7 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
     const info = useStockOptionInfo(stockOption, selectedSocialMedia)
 
     if (!stockOption) {
-        return <EmptyState />
+        return <StockOptionResultEmptyState />
     }
 
     return (
