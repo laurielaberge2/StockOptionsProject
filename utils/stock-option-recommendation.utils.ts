@@ -18,11 +18,9 @@ export function getBuyHoldSellSuggestion(
 
     if (points >= 3) {
         return BuyHoldSell.BUY;
-    } else {
-        return priceWentUpSincePurchase
-            ? BuyHoldSell.HOLD
-            : BuyHoldSell.SELL;
+    } else if (priceWentUpSincePurchase) {
+        return BuyHoldSell.HOLD
     }
 
-
+    return BuyHoldSell.SELL
 };

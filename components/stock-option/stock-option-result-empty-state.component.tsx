@@ -8,7 +8,9 @@ function StockOptionResultEmptyState() {
     const styles = useStockOptionResultEmptyStateStyles();
 
     return (
-        <Text style={styles.text}>Search a stock option for more information</Text>
+        <Text style={styles.text}>
+            Search a stock option for more information
+        </Text>
     );
 }
 

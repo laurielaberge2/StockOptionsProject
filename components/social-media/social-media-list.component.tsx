@@ -18,7 +18,13 @@ function SocialMediaList({ socialMediaList, onToggleSelected }: Props) {
     return (
         <View
             style={styles.parentView} testID={TestIds.SOCIAL_MEDIA_LIST}>
-            {socialMediaList.map((sm) => <SocialMediaChoice socialMedia={sm} onToggleSelected={onToggleSelected} key={sm.id} />)}
+            {socialMediaList.map((sm) =>
+                <SocialMediaChoice
+                    socialMedia={sm}
+                    onToggleSelected={onToggleSelected}
+                    key={sm.id}
+                />
+            )}
         </View>
     );
 }

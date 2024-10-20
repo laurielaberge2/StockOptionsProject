@@ -10,10 +10,13 @@ interface Props {
 };
 
 function BuyHoldSellRecommendation({ recommendation }: Props) {
-    const backgroundColor = recommendation === BuyHoldSell.BUY
-        ? Colors.buy
-        : recommendation === BuyHoldSell.HOLD
-            ? Colors.hold : Colors.sell
+    let backgroundColor = Colors.sell;
+
+    if (recommendation === BuyHoldSell.BUY) {
+        backgroundColor = Colors.buy
+    } else if (recommendation === BuyHoldSell.HOLD) {
+        backgroundColor = Colors.hold
+    }
 
     const styles = useStockOptionRecommendationStyles(backgroundColor);
 

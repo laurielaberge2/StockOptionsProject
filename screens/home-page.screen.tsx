@@ -53,11 +53,15 @@ function HomePage() {
                 testID={TestIds.SEARCHBAR}
             />
 
-            <SocialMediaList socialMediaList={socialMediaSelection} onToggleSelected={onToggleSelected} />
+            <SocialMediaList
+                socialMediaList={socialMediaSelection}
+                onToggleSelected={onToggleSelected}
+            />
 
             <StockOptionResult
                 stockOption={stockOption}
-                selectedSocialMedia={socialMediaSelection.filter(x => x.selected).map(x => x.name)}
+                selectedSocialMedia={socialMediaSelection.
+                    filter(x => x.selected).map(x => x.name)}
             />
         </ View >
     );
