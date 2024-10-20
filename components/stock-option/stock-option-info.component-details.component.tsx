@@ -7,6 +7,7 @@ import { StockOptionInfo } from "../../app/models/stock-option.models";
 import { SocialMediaMention } from "../../app/models/social-media.models";
 import StockOptionPriceInfo from "./stock-option-price-info.component";
 import SocialMediaMentionDetail from "../social-media/social-media-mention-detail.component";
+import { TestIds } from "../../constants/test-ids.constants";
 
 interface Props {
     info: StockOptionInfo,
@@ -21,7 +22,7 @@ function StockOptionInfoDetails({ info }: Props) {
     } = info;
 
     return (
-        <View style={styles.parentView}>
+        <View style={styles.parentView} testID={TestIds.STOCK_OPTION_INFO_VIEW}>
             <StockOptionPriceInfo info={info} />
 
             <BuyHoldSellRecommendation recommendation={recommendation} />

@@ -22,7 +22,7 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
 
     const info = useStockOptionInfo(stockOption, selectedSocialMedia, selectedDate)
 
-    const month = selectedDate.getUTCMonth() + 1; // months from 1-12
+    const month = selectedDate.getUTCMonth() + 1;
     const day = selectedDate.getUTCDate();
     const year = selectedDate.getUTCFullYear();
     const formattedDate = month + "/" + day + "/" + year;
@@ -43,7 +43,7 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
             </Text >
 
             <Text style={styles.textSection}>
-                <Text>Date: From</Text>
+                <Text>Date: from</Text>
                 <Text style={styles.stockOption}>
                     {` ${formattedDate} `}
                 </Text>
