@@ -6,6 +6,7 @@ import EmptyState from "./empty-state.component";
 import StockOptionInfoDetails from "./stock-option-info.component-details";
 import { useStockOptionInfo } from "@/hooks/use-stock-option-info";
 import { SocialMediaEnum } from "@/app/models/social-media.models";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
     stockOption: string
@@ -55,13 +56,13 @@ const useStockOptionResultStyles = makeStyles(() => ({
     },
     textSection: {
         fontSize: 20,
-        color: '#000000',
+        color: Colors.darkText,
     },
     stockOption: {
         fontWeight: 'bold'
     },
     button: {
-        backgroundColor: 'rgba(90, 154, 230, 1)',
+        backgroundColor: Colors.button,
         borderRadius: 30,
         marginTop: 10
     },

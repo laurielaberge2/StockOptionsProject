@@ -3,6 +3,7 @@ import React from "react";
 import { View } from "react-native";
 import { CheckBox, makeStyles } from '@rneui/themed';
 import { SocialMediaItem } from "@/app/models/social-media.models";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
     socialMedia: SocialMediaItem,
@@ -36,11 +37,11 @@ const useSocialMediaChoiceStyles = makeStyles(() => ({
         flexWrap: 'wrap',
     },
     checkBoxContainer: {
-        backgroundColor: '#666665',
+        backgroundColor: Colors.darkGrey,
         marginBottom: 10
     },
     checkBoxText: {
-        color: "#FFFFFF"
+        color: Colors.lightText
     }
 }));
 

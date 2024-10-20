@@ -3,6 +3,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
 import { BuyHoldSell } from "@/app/models/stock-option.models";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
     recommendation: BuyHoldSell
@@ -10,9 +11,9 @@ interface Props {
 
 function BuyHoldSellRecommendation({ recommendation }: Props) {
     const backgroundColor = recommendation === BuyHoldSell.BUY
-        ? '#87db74'
+        ? Colors.buy
         : recommendation === BuyHoldSell.HOLD
-            ? '#ebf55d' : '#bd2d2d'
+            ? Colors.hold : Colors.sell
 
     const styles = useStockOptionRecommendationStyles(backgroundColor);
 
@@ -35,7 +36,7 @@ const useStockOptionRecommendationStyles = makeStyles((_, backgroundColor: strin
         marginBottom: 10,
         padding: 10,
         fontSize: 18,
-        color: '#000000',
+        color: Colors.darkText,
         width: '100%',
         backgroundColor
     },

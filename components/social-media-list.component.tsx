@@ -4,6 +4,7 @@ import { View } from "react-native";
 import SocialMediaChoice from "./social-media-choice.component";
 import { makeStyles } from '@rneui/themed';
 import { SocialMediaItem } from "@/app/models/social-media.models";
+import { Colors } from "@/constants/Colors";
 
 interface Props {
     socialMediaList: SocialMediaItem[],
@@ -26,7 +27,7 @@ const useSocialMediaListStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        backgroundColor: '#666665',
+        backgroundColor: Colors.darkGrey,
         justifyContent: 'space-evenly'
     }
 }));

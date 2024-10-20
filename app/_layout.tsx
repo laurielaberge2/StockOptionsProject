@@ -1,8 +1,14 @@
+import { Colors } from "@/constants/Colors";
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <Stack>
+    <Stack screenOptions={{
+      headerStyle: {
+        backgroundColor: Colors.darkGrey,
+      },
+      title: 'Stock options lookup 🐈‍🐈'
+    }}>
       <Stack.Screen name="index" />
     </Stack>
   );

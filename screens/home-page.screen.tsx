@@ -6,6 +6,7 @@ import SocialMediaList from "@/components/social-media-list.component";
 import StockOptionResult from "@/components/stock-option-result.component";
 import { makeStyles } from '@rneui/themed';
 import { SocialMediaItem, SocialMediaEnum } from "@/app/models/social-media.models";
+import { Colors } from "@/constants/Colors";
 
 function HomePage() {
     const styles = useHomePageStyles();
@@ -35,7 +36,7 @@ function HomePage() {
         setSocialMediaSelection(newSocialMediaSelection)
     }
 
-    // TODO icone d'app, datepicker et style header
+    // TODO icone d'app, datepicker, style header, tests et readme
 
     return (
         <View style={styles.parentView}>
@@ -44,8 +45,10 @@ function HomePage() {
                 onChangeText={updateSearch}
                 value={stockOption}
                 platform="android"
-                containerStyle={{ backgroundColor: '#b0afab' }}
-                placeholderTextColor={"#b0afab"}
+                containerStyle={{
+                    backgroundColor: Colors.lightGrey
+                }}
+                placeholderTextColor={Colors.darkText}
             />
 
             <SocialMediaList socialMediaList={socialMediaSelection} onToggleSelected={onToggleSelected} />
@@ -60,7 +63,7 @@ function HomePage() {
 
 const useHomePageStyles = makeStyles(() => ({
     parentView: {
-        backgroundColor: '#b0afab',
+        backgroundColor: Colors.lightGrey,
         height: '100%',
     },
 }));
