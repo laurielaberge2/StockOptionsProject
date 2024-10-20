@@ -3,21 +3,29 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import StockOptionResultEmptyState from "./stock-option-result-empty-state.component";
-import StockOptionInfoDetails from "../stock-option-info.component-details";
 import { useStockOptionInfo } from "@/hooks/use-stock-option-info";
 import { SocialMediaEnum } from "@/app/models/social-media.models";
 import { Colors } from "@/constants/Colors";
+import StockOptionInfoDetails from "./stock-option-info.component-details";
+import SearchDatePicker from "@/components/search-date-picker.component";
 
 interface Props {
     stockOption: string
-    selectedSocialMedia: SocialMediaEnum[]
+    selectedSocialMedia: SocialMediaEnum[],
 };
 
 function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
     const styles = useStockOptionResultStyles();
 
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [infoIsShown, setInfoIsShown] = useState<boolean>(false);
-    const info = useStockOptionInfo(stockOption, selectedSocialMedia)
+
+    const info = useStockOptionInfo(stockOption, selectedSocialMedia, selectedDate)
+
+    const month = selectedDate.getUTCMonth() + 1; // months from 1-12
+    const day = selectedDate.getUTCDate();
+    const year = selectedDate.getUTCFullYear();
+    const formattedDate = month + "/" + day + "/" + year;
 
     if (!stockOption) {
         return <StockOptionResultEmptyState />
@@ -25,10 +33,22 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
 
     return (
         <View style={styles.parentView}>
+            <SearchDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+
             <Text style={styles.textSection}>
                 <Text>Stock name: </Text>
                 <Text style={styles.stockOption}>
-                    {stockOption || "..."}
+                    {stockOption}
+                </Text>
+            </Text >
+
+            <Text style={styles.textSection}>
+                <Text>Date: From</Text>
+                <Text style={styles.stockOption}>
+                    {` ${formattedDate} `}
+                </Text>
+                <Text>
+                    to ten days before
                 </Text>
             </Text >
 
@@ -51,7 +71,6 @@ function StockOptionResult({ stockOption, selectedSocialMedia }: Props) {
 
 const useStockOptionResultStyles = makeStyles(() => ({
     parentView: {
-        marginVertical: 10,
         alignItems: 'center',
     },
     textSection: {
@@ -68,7 +87,8 @@ const useStockOptionResultStyles = makeStyles(() => ({
     },
     buttonTitle: {
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 16,
+        color: Colors.darkText,
     },
     buttonContainer: {
         width: 160,

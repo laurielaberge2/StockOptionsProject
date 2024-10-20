@@ -5,7 +5,8 @@ import { StockOptionInfo } from "@/app/models/stock-option.models";
 
 export function useStockOptionInfo(
     stockOption: string,
-    selectedSocialMedia: SocialMediaEnum[]
+    selectedSocialMedia: SocialMediaEnum[],
+    selectedDate: Date,
 ): StockOptionInfo {
     const [mentions, setMentions] = useState<SocialMediaMentions[]>(
         getMentions()
@@ -29,7 +30,7 @@ export function useStockOptionInfo(
         setPrice(getPrice());
         setPurchasePrice(getPrice());
         setPriceInLastMonth(getPrice());
-    }, [stockOption]);
+    }, [stockOption, selectedDate]);
 
 
     return {

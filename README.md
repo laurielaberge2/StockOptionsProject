@@ -2,7 +2,7 @@
 
 Developed by Laurie Laberge in October 2024
 
-Note: This was only tested on Android as I do not have an Mac or an iPhone
+Note: This was only tested on Android as I do not have a Mac or an iPhone
 
 ## Installation
 
@@ -13,6 +13,8 @@ npm install
 npx expo run:android
 ```
 Press 'a'
+
+Choose development server if prompted
 
 ## License
 
