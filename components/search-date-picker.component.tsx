@@ -4,6 +4,7 @@ import { SafeAreaView, Text } from "react-native";
 import { Button, makeStyles } from '@rneui/themed';
 import { DateTimePickerAndroid, DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import { Colors } from "../constants/colors.constants";
+import { TestIds } from "../constants/test-ids.constants";
 
 export interface Props {
     selectedDate: Date,
@@ -37,6 +38,7 @@ function SearchDatePicker({ selectedDate, setSelectedDate }: Props) {
                 title="Show date picker"
                 color={Colors.button}
                 titleStyle={styles.buttonTitle}
+                testID={TestIds.SEARCH_DATE_PICKER_BUTTON}
             />
         </SafeAreaView>
     );
