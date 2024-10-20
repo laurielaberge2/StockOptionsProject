@@ -2,6 +2,7 @@
 import React from "react";
 import { Text } from "react-native";
 import { makeStyles } from '@rneui/themed';
+import { Colors } from "@/constants/Colors";
 
 function EmptyState() {
     const styles = useStockOptionResultStyles();
@@ -11,12 +12,11 @@ function EmptyState() {
     );
 }
 
-
 const useStockOptionResultStyles = makeStyles(() => ({
     text: {
         margin: 10,
         fontSize: 20,
-        color: '#000000',
+        color: Colors.darkText,
         textAlign: 'center'
     },
 }));
