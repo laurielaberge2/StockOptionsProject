@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { CheckBox, makeStyles } from '@rneui/themed';
 import { SocialMediaItem } from "../../app/models/social-media.models";
 import { Colors } from "../../constants/colors.constants";
+import { TestIds } from "../../constants/test-ids.constants";
 
 interface Props {
     socialMedia: SocialMediaItem,
@@ -15,16 +16,17 @@ function SocialMediaChoice({ socialMedia, onToggleSelected }: Props) {
 
     return (
         <View
-            style={styles.parentView}>
+            style={styles.parentView} testID={TestIds.SOCIAL_MEDIA_CHOICE_PARENT_VIEW}>
             <CheckBox
                 center
                 checked={socialMedia.selected}
                 title={socialMedia.name}
                 onPress={() => onToggleSelected(socialMedia.id)}
-                checkedColor="#0F0"
-                uncheckedColor="#F00"
+                checkedColor={Colors.checked}
+                uncheckedColor={Colors.unchecked}
                 containerStyle={styles.checkBoxContainer}
                 textStyle={styles.checkBoxText}
+                testID={TestIds.SOCIAL_MEDIA_CHECK_BOX}
             />
         </View>
     );

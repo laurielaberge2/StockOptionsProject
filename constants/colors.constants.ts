@@ -8,4 +8,6 @@ export const Colors = {
   hold: '#ebf55d',
   sell: '#bd2d2d',
   blue: '#89BFC1',
+  checked: '#0F0',
+  unchecked: '#F00',
 };
