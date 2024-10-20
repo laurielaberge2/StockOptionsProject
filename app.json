@@ -4,11 +4,11 @@
     "slug": "StockOptionsProject",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/stock.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/stock.png",
+      "image": "./assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/stock.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#72a5f7",
         "resizeMode": "cover"
       },
@@ -26,7 +26,7 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/stock.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router"

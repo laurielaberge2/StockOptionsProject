@@ -5,7 +5,7 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{
       headerStyle: {
-        backgroundColor: Colors.darkGrey,
+        backgroundColor: Colors.blue,
       },
       title: 'Stock options lookup 🐈‍🐈'
     }}>
