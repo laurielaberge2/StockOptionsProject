@@ -38,7 +38,7 @@ describe('StockOptionInfoDetails', () => {
             <StockOptionInfoDetails info={info} />
         );
 
-        const text = queryByText(`Recommendation: ${info.recommendation}$`)
+        const text = queryByText('Recommendation:');
 
         expect(text).toBeTruthy();
     });

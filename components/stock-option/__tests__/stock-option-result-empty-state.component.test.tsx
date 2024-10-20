@@ -3,7 +3,7 @@ import { Colors } from "../../../constants/colors.constants";
 import StockOptionResultEmptyState from "../stock-option-result-empty-state.component";
 import { render } from "@testing-library/react-native"
 
-describe('SocialMediaList', () => {
+describe('StockOptionResultEmptyState', () => {
     it('renders empty state text', () => {
         const { queryByText } = render(
             <StockOptionResultEmptyState />

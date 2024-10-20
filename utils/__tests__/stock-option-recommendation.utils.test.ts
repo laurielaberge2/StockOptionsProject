@@ -47,10 +47,8 @@ describe('getBuyHoldSellSuggestion', () => {
             price,
             purchasePrice,
             priceInLastMonth
-        )
+        );
 
-        expect(recommendation).toEqual(expectedRecommendation)
-    })
-
-
+        expect(recommendation).toEqual(expectedRecommendation);
+    });
 })

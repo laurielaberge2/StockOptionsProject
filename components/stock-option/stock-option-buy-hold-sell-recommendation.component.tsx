@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 import { makeStyles } from '@rneui/themed';
 import { BuyHoldSell } from "../../app/models/stock-option.models";
 import { Colors } from "../../constants/colors.constants";
+import { TestIds } from "../../constants/test-ids.constants";
 
 interface Props {
     recommendation: BuyHoldSell
@@ -21,7 +22,10 @@ function BuyHoldSellRecommendation({ recommendation }: Props) {
     const styles = useStockOptionRecommendationStyles(backgroundColor);
 
     return (
-        <Text style={styles.recommendation}>
+        <Text
+            style={styles.recommendation}
+            testID={TestIds.STOCK_OPTION_BUY_HOLD_SELL_RECOMMENDATION}
+        >
             <Text style={styles.recommendationLabel}>
                 Recommendation:
             </Text>
