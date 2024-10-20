@@ -1,9 +1,9 @@
 import { BuyHoldSell } from "../../app/models/stock-option.models"
-import { SocialMediaEnum, SocialMediaMentions } from "../../app/models/social-media.models";
+import { SocialMediaEnum, SocialMediaMention } from "../../app/models/social-media.models";
 import { getBuyHoldSellSuggestion } from "../stock-option-recommendation.utils";
 
 describe('getBuyHoldSellSuggestion', () => {
-    const enoughMentions: SocialMediaMentions[] = [
+    const enoughMentions: SocialMediaMention[] = [
         {
             name: SocialMediaEnum.FACEBOOK,
             nbMentions: 4
@@ -40,7 +40,7 @@ describe('getBuyHoldSellSuggestion', () => {
         price: number,
         purchasePrice: number,
         priceInLastMonth: number,
-        mentions: SocialMediaMentions[],
+        mentions: SocialMediaMention[],
     ) => {
         const recommendation = getBuyHoldSellSuggestion(
             mentions,

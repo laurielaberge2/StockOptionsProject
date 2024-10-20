@@ -1,4 +1,4 @@
-import { SocialMediaMentions } from "./social-media.models"
+import { SocialMediaMention } from "./social-media.models"
 
 export enum BuyHoldSell {
     BUY = 'Buy',
@@ -10,6 +10,6 @@ export interface StockOptionInfo {
     price: number,
     purchasePrice: number,
     priceInLastMonth: number,
-    mentions: SocialMediaMentions[]
+    mentions: SocialMediaMention[]
     recommendation: BuyHoldSell
 }

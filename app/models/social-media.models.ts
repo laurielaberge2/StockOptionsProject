@@ -11,7 +11,7 @@ export interface SocialMediaItem {
     selected: boolean
 };
 
-export interface SocialMediaMentions {
+export interface SocialMediaMention {
     name: SocialMediaEnum,
     nbMentions: number
 };
