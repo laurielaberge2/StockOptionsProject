@@ -37,8 +37,6 @@ function HomePage() {
         setSocialMediaSelection(newSocialMediaSelection)
     }
 
-    // TODO tests et tester de cloner et build pour voir si ca fonctionne
-
     return (
         <View style={styles.parentView}>
             <SearchBar
