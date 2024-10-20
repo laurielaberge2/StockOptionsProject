@@ -29,6 +29,11 @@ Press 'a'
 
 Choose development server if prompted
 
+## Testing
+```bash
+npm run test
+```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
